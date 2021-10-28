@@ -9,13 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       post: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       imageURL: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       userId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
